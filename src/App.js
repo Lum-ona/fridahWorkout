@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Home from "./Home";
 import CreateWorkout from "./views/CreateWorkout";
@@ -16,6 +16,13 @@ function App() {
 
   const user = useSelector(selectUser);
 
+  useEffect(() => {
+    if (isOnAllWorkouts) {
+      setIsOnCreateWorkout(false);
+    } else if (isOnCreateWorkout) {
+      setIsOnAllWorkouts(false);
+    }
+  }, [isOnCreateWorkout, isOnAllWorkouts]);
   return (
     <div className="App">
       {!user ? (
@@ -34,7 +41,9 @@ function App() {
           />
           <main id="main" className="main">
             {isOnAllWorkouts && <AllWorkouts />}
-            {isOnCreateWorkout && <CreateWorkout />}
+            {isOnCreateWorkout && (
+              <CreateWorkout onallworkouts={setIsOnAllWorkouts} />
+            )}
           </main>
         </>
       )}

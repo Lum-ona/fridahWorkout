@@ -1,8 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Pagetitle from "../components/Pagetitle";
+import { selectUser } from "../redux/features/userSlice";
 import "./assets/styles/AllWorkouts.css";
 
 export default function AllWorkouts() {
+  const user = useSelector(selectUser);
+
   return (
     <>
       <Pagetitle
@@ -33,19 +37,19 @@ export default function AllWorkouts() {
                 <th scope="row">
                   <span>#1</span>
                 </th>
-                <td></td>
-                <td></td>
+                <td>{user.date}</td>
+                <td>{user.name}</td>
                 <td>
-                  <span className="text-primary"></span>
+                  <span className="text-primary"> {user.feel}</span>
                 </td>
 
                 <td>
-                  <span></span>
+                  <span>{user.duration}</span>
                 </td>
-                <td></td>
+                <td>{user.sets}</td>
                 <td>
                   {" "}
-                  <span className="badge bg-warning"></span>
+                  <span className="badge bg-warning">{user.focus}</span>
                 </td>
               </tr>
               <tr>
