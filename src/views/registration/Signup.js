@@ -14,7 +14,7 @@ export default function Signup() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (alldata > 0) {
+    if (alldata.length > 0) {
       dispatch(
         login({
           email: email,
@@ -44,14 +44,10 @@ export default function Signup() {
       password2.length !== 0
     ) {
       if (validate) {
-        if (password1.length > 7) {
-          if (password2 === password1) {
-            setAllData([...alldata, email, firstname, secondname, password2]);
-          } else {
-            alert("Password doesnt match");
-          }
+        if (password2 === password1) {
+          setAllData([...alldata, email, firstname, secondname, password2]);
         } else {
-          alert("Thats a weak password");
+          alert("Password doesnt match");
         }
       } else {
         alert("Please write a valid email");
@@ -129,7 +125,10 @@ export default function Signup() {
           </div>
 
           <div className="text-center">
-            <button onClick={(e) => submitBtn(e)} type="submit"></button>
+            <button onClick={(e) => submitBtn(e)} type="submit">
+              {" "}
+              submit
+            </button>
           </div>
         </form>
       </div>

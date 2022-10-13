@@ -38,7 +38,7 @@ export default function Header({ setToggle }) {
               >
                 <i className="bi bi-bell"></i>
                 {newNotificationCount && (
-                  <span className="badge bg-primary badge-number">2</span>
+                  <span className="badge bg-primary badge-number">1</span>
                 )}
               </span>
 
@@ -59,22 +59,12 @@ export default function Header({ setToggle }) {
                 <li className="notification-item">
                   <i className="bi bi-check-circle text-success"></i>
                   <div>
-                    <h4>There's an opening</h4>
-                    <p>Data Collector</p>
-                    <p>2 hrs. ago</p>
+                    <h4>You can check list of all your workouts</h4>
+                    <p>workouts</p>
                   </div>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
-                </li>
-
-                <li className="notification-item">
-                  <i className="bi bi-check-circle text-success"></i>
-                  <div>
-                    <h4>There's an opening</h4>
-                    <p>Data Collection Supervisor</p>
-                    <p>2 hrs. ago</p>
-                  </div>
                 </li>
 
                 <li>
@@ -121,8 +111,8 @@ export default function Header({ setToggle }) {
                   <span>
                     <img src="" alt="" className="rounded-circle" />
                     <div>
-                      <h4>Echonoma</h4>
-                      {/* <p>Welcome {user.firstName} to Echonoma</p> */}
+                      <h4>{user.firstName} </h4>
+                      <p>Welcome </p>
                       <p>4 hrs. ago</p>
                     </div>
                   </span>
