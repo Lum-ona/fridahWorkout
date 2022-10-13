@@ -1,0 +1,12 @@
+.register {
+  width: 100vw;
+  height: 100vh;
+}
+.register .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.verticalBorder {
+  transform: rotate(90deg);
+}
