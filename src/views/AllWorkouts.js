@@ -33,38 +33,38 @@ export default function AllWorkouts() {
                 <th scope="row">
                   <span>#1</span>
                 </th>
-                <td>Data Collection supervisor</td>
-                <td>Tech</td>
+                <td></td>
+                <td></td>
                 <td>
-                  <span className="text-primary">Green</span>
+                  <span className="text-primary"></span>
                 </td>
 
                 <td>
-                  <span>30th October</span>
+                  <span></span>
                 </td>
-                <td>Not yet</td>
+                <td></td>
                 <td>
                   {" "}
-                  <span className="badge bg-warning">Null</span>
+                  <span className="badge bg-warning"></span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">
-                  <span>#s</span>
+                  <span></span>
                 </th>
-                <td>Data Collector</td>
-                <td>Tech</td>
+                <td></td>
+                <td></td>
                 <td>
-                  <span className="text-primary">Green</span>
+                  <span className="text-primary"></span>
                 </td>
 
                 <td>
-                  <span>30th October</span>
+                  <span></span>
                 </td>
-                <td>Not yet</td>
+                <td></td>
                 <td>
                   {" "}
-                  <span className="badge bg-warning">Null</span>
+                  <span className="badge bg-warning"></span>
                 </td>
               </tr>
             </tbody>
