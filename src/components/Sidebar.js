@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import "./assets/styles/Sidebar.css";
-// import { logout } from "../redux/features/userSlice";
-// import { useDispatch } from "react-redux";
+import { logout } from "../redux/features/userSlice";
+import { useDispatch } from "react-redux";
 
 export default function Sidebar({ allworkouts, createWorkout, toggle }) {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [homebgActive, sethomeBgActive] = useState(true);
-  const [vacancybgActive, setvacancyBgActive] = useState(false);
-  const [profilebgActive, setprofileBgActive] = useState(false);
-  const [activitiesbgActive, setactivitiesBgActive] = useState(false);
-  const [inboxbgActive, setinboxBgActive] = useState(false);
+  const [creatbgActive, setCreateBgActive] = useState(false);
 
   return (
     <>
@@ -24,6 +21,8 @@ export default function Sidebar({ allworkouts, createWorkout, toggle }) {
             onClick={() => {
               allworkouts(true);
               createWorkout(false);
+              sethomeBgActive(true);
+              setCreateBgActive(false);
             }}
           >
             <span
@@ -39,20 +38,22 @@ export default function Sidebar({ allworkouts, createWorkout, toggle }) {
             </span>
           </li>
 
-          <li className="nav-heading">Pages</li>
+          <li className="nav-heading">Activities</li>
 
           <li
             className="nav-item"
             onClick={() => {
               allworkouts(false);
               createWorkout(true);
+              sethomeBgActive(false);
+              setCreateBgActive(true);
             }}
           >
             <span
               className="nav-link "
               style={{
-                background: activitiesbgActive ? "#f6f9ff" : "white",
-                color: activitiesbgActive && "#39be81",
+                background: creatbgActive ? "#f6f9ff" : "white",
+                color: creatbgActive && "#39be81",
               }}
             >
               {" "}
@@ -62,10 +63,7 @@ export default function Sidebar({ allworkouts, createWorkout, toggle }) {
           </li>
 
           <li className="nav-item">
-            <span
-              className="nav-link "
-              // onClick={() => dispatch(logout())}
-            >
+            <span className="nav-link " onClick={() => dispatch(logout())}>
               {" "}
               <i className="bi bi-box-arrow-in-right"></i>
               <span>Signout</span>
