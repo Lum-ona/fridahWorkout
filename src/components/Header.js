@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../redux/features/userSlice";
 
 export default function Header({ setToggle }) {
-  // const user = useSelector(selectUser);
+  const user = useSelector(selectUser);
 
   const [newNotificationCount, setNewNotificationCount] = useState(true);
   const [newMessageCount, setNewMessageCount] = useState(true);
@@ -24,7 +24,9 @@ export default function Header({ setToggle }) {
 
         <div className="center-header logo">
           <span className=" d-flex align-items-center ">
-            <h2>Workout</h2>
+            <h2>
+              Hello {user.firstName} {user.secondName}😃👋.. Lets workout{" "}
+            </h2>
           </span>
         </div>
 
@@ -44,12 +46,7 @@ export default function Header({ setToggle }) {
 
               <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                 <li className="dropdown-header">
-                  You have 2 new notifications
-                  {/* <a href="https://www.app.echonoma.com">
-                    <span className="badge rounded-pill bg-primary p-2 ms-2">
-                      View all
-                    </span>
-                  </a> */}
+                  You have 1 new notifications
                 </li>
 
                 <li>
@@ -66,15 +63,6 @@ export default function Header({ setToggle }) {
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
-
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                {/* <li className="dropdown-footer">
-                  <a href="https://www.app.echonoma.com">
-                    Show all notifications
-                  </a>
-                </li> */}
               </ul>
             </li>
 
